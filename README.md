@@ -209,21 +209,6 @@ Each agent has specialized tools:
 - `validate_mysql_setup()` - Run MySQL agent
 - `validate_webserver_setup()` - Run Web Server agent
 
-## 📁 Project Structure
-
-```
-.
-├── main.py                    # Main entry point
-├── orchestrator_agent.py      # Main orchestrator agent
-├── mysql_agent.py             # MySQL database agent
-├── webserver_agent.py         # Web server/PHP agent
-├── utils.py                   # Utility functions
-├── config.yaml                # Configuration file
-├── requirements.txt           # Python dependencies
-├── docker-compose.yml         # Generated Docker Compose file
-└── README.md                  # This file
-```
-
 ## 🔧 Troubleshooting
 
 ### Docker Permission Issues
