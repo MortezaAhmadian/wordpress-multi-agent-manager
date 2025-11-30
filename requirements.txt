@@ -1,0 +1,9 @@
+langchain==0.3.13
+langchain-anthropic==0.3.3
+langchain-openai==0.2.14
+langchain-community==0.3.13
+pyyaml==6.0.2
+python-dotenv==1.0.1
+docker==7.1.0
+requests==2.32.3
+colorama==0.4.6

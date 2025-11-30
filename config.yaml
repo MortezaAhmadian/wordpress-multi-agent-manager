@@ -1,0 +1,71 @@
+# LangChain Multi-Agent WordPress Manager Configuration
+
+llm:
+  # Provider options: "openai", "anthropic", "ollama", "azure"
+  provider: "anthropic"
+  
+  # Model configuration
+  model: "claude-sonnet-4-20250514"
+  
+  # API credentials (use environment variables for security)
+  api_key: "${ANTHROPIC_API_KEY}"  # Set via environment variable
+  
+  # Optional: Custom API URL (for local LLMs or proxies)
+  api_url: null
+  
+  # Temperature for LLM responses (0.0 - 1.0)
+  temperature: 0.1
+  
+  # Maximum tokens for responses
+  max_tokens: 4096
+
+# WordPress Docker Configuration
+wordpress:
+  version: "latest"
+  port: 8083
+  
+  # WordPress admin credentials
+  admin:
+    user: "admin"
+    password: "admin_password_123"
+    email: "admin@example.com"
+
+# MySQL Configuration
+mysql:
+  version: "8.0"
+  port: 3306
+  
+  database:
+    name: "wordpress_db"
+    user: "wordpress_user"
+    password: "wordpress_password_123"
+    root_password: "root_password_123"
+
+# Docker Compose Configuration
+docker:
+  compose_file: "docker-compose.yml"
+  project_name: "wordpress_stack"
+  
+  # Timeout settings (in seconds)
+  startup_timeout: 120
+  health_check_interval: 5
+  max_retries: 10
+
+# Agent Configuration
+agents:
+  max_iterations: 15
+  verbose: true
+  
+  # Enable self-healing
+  auto_fix: true
+  
+  # Validation settings
+  validation:
+    run_tests: true
+    test_timeout: 30
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "wordpress_manager.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
